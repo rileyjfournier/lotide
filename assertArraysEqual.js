@@ -1,4 +1,4 @@
-const eqArrays = function(arr1, arr2) {
+const assertArraysEqual = function(arr1, arr2) {
   let eqChecker = 0;
   for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] === arr2[i]) {
@@ -12,8 +12,8 @@ const eqArrays = function(arr1, arr2) {
   }
 };
 
-eqArrays([1,2,3], [1,2,3]);
-eqArrays([1,2,3], [1,2,"3"]);
-eqArrays([1,2,3], [0,2,3]);
-eqArrays([1,2,3], [1,2,3,4]);
-eqArrays(['one',2,"three"], ['one',2,"three"]);
+assertArraysEqual([1,2,3], [1,2,3]);
+assertArraysEqual([1,2,3], [1,2,"3"]);
+assertArraysEqual([1,2,3], [0,2,3]);
+assertArraysEqual([1,2,3], [1,2,3,4]);
+assertArraysEqual(['one',2,"three"], ['one',2,"three"]);
