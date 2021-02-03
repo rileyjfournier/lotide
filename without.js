@@ -30,17 +30,6 @@ const eqArrays = function(arr1, arr2) {
 
 // function that removes stated items (itemsToRemove) from the source
 // and returns a new array (updated source)
-
-// const without = function(source, itemsToRemove) {
-//   let eqChecker = [];
-//   for (let i = 0; i < source.length; i++) {
-//     if (source[i] !== itemsToRemove[i]) {
-//       eqChecker.push(source[i]);
-//     }
-//   }
-//   console.log(eqChecker);
-// };
-
 const without = function(source, itemsToRemove) {
   let eqChecker = [];
   for (const element of source) {
