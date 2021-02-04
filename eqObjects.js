@@ -24,17 +24,27 @@ const assertEqual = function(actual, expected) {
 // otherwise return false
 
 const eqObjects = function(object1, object2) {
-  if (Object.keys(object1).length !== Object.keys(object2).length) { 
+  let object1Keys = Object.keys(object1);
+  let object2Keys = Object.keys(object2);
+  if (object1Keys.length !== object2Keys.length) { 
     return false;   // IFFFF* both objects have the same # of keys, proceed, else false
-  } else {
-    for (const key of Object.keys(object1)) {  // for every key (array val in this case) in object1
-      if (object1[key] === object2[key]) {     // if the value of THIS key is equal in both objects
-        return true;                           // return turn
-      } else {                                 // else false
-        return false;
+  } 
+  for (const key of object1Keys) {           // for every key (array val in this case) in object1
+      let arr1 = [];
+      let arr2 = [];
+    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+      arr1 = object1[key];
+      arr2 = object2[key];
+      if (eqArrays(arr1, arr2)) {
+        return true;
       }
+      return false;
+     } 
+    if (object1[key] !== object2[key]) {
+        return false;
     }
   }
+  return true;
 };
 
 const ab = { a: "1", b: "2" };
@@ -44,8 +54,26 @@ const cd = { c: "1", d: ["2", 3] };
 const cd2 = { c: "1", d: ["2", 3, 4] };
 const dc = { d: ["2", 3], c: "1" };
 
+console.log(eqArrays(cd["d"], cd2["d"]))
+console.log(eqObjects(cd, cd2));
+console.log(eqObjects(ab, ba))
+console.log(eqObjects(cd, dc))
+console.log(eqObjects(ab, abc))
+console.log(eqObjects(ab, cd))
+
 // console.log(eqObjects(ab, abc));
-assertEqual(eqObjects(cd, dc), true);
-assertEqual(eqObjects(cd, cd2), false);
-assertEqual(eqObjects(ab, ba), true);
-assertEqual(eqObjects(ab, abc), false);
+// assertEqual(eqObjects(cd, dc), true);
+// assertEqual(eqObjects(cd, cd2), false);
+// assertEqual(eqObjects(ab, ba), true);
+// assertEqual(eqObjects(ab, abc), false);
+
+
+
+
+const someObject = {
+  key1: "blah",
+  key2: "moreblah",
+  key3: ""
+}
+
+Object.keys(someObject)  // will return an array => [ key1, key2, key3 ]
