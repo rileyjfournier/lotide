@@ -20,7 +20,7 @@ const countLetters = function(str) {
   console.log(newObj);
 };
 
-strExample = "hello my name is riley";
+const strExample = "hello my name is riley";
 
 countLetters(strExample);
 
