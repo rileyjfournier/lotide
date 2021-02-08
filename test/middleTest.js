@@ -1,22 +1,18 @@
-const assertArraysEqual = require("../assertArraysEqual");
+const assert = require('chai').assert
 const middle = require("../middle");
 
-testArr = [];
-testArr1 = [1];
-testArr2 = [1, 2];
-testArr3 = [1, 2, 3];
-testArr4 = [1, 2, 3, 4];
-testArr5 = [1, 2, 3, 4, 5];
-testArr6 = [1, 2, 3, 4, 5, 6];
+describe("Testing - middle", () => {
 
+  it("should return the middle value (as an array)", () => {
+    assert.isArray(middle([1,2,3,4,5]));
+  });
 
-middle(testArr4);
-assertArraysEqual(testArr4, [1, 2, 3, 4]);
-console.log()
+  it("should return the middle value '3' of an array '[1,2,3,4,5]'", () => {
+    assert.strictEqual(middle([1,2,3,4,5])[0], 3);
+  });
 
-middle(testArr5);
-assertArraysEqual(testArr5, [1, 2, 3, 4, 5]);
-console.log()
+  it("should return the middle two values (3,4) if array.length is an even number ([1,2,3,4,5,6])", () => {
+    assert.strictEqual(middle([1,2,3,4,5,6])[0].toString() + ',' + middle([1,2,3,4,5,6])[1].toString(), '3,4')
+  });
 
-middle(testArr6);
-assertArraysEqual(testArr6, [1, 2, 3, 4, 5, 6]);
+});

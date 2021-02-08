@@ -6,9 +6,9 @@ const assertArraysEqual = function(arr1, arr2) {
     } 
   }
   if (eqChecker === arr1.length && eqChecker === arr2.length) {
-    console.log(`${arr1} is equal to ${arr2}`);
+    return true;
   } else {
-    console.log(`${arr1} is NOT equal to ${arr2}`);
+    return false;
   }
 };
 

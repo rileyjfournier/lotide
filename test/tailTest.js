@@ -1,13 +1,16 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert
 const tail = require('../tail');
 
-const words = ["Hello", "Lighthouse", "Labs"];
-const moreWords = [];
-const evenMoreWords = ["Hello"];
+describe("Testing - tail", () => {
 
-console.log(tail(words));
-console.log(tail(moreWords));
-console.log(tail(evenMoreWords));
+  it("should return the tail of an array", () => {
+    let words = ["Hello", "Lighthouse", "Labs"];
+    assert.strictEqual(tail(words)[0] + ', ' + tail(words)[1], "Lighthouse, Labs");
+  });
+  
+  it("returned value should be an array", () => {
+    let words = ["Hello", "Lighthouse", "Labs"];
+    assert.isArray(tail(words));
+  });
 
-
-assertEqual(words.length, 3);
+});

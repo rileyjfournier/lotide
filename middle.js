@@ -5,14 +5,15 @@ const middle = function(arr) {
     newArr.push(element);
   }
   if (arr.length < 3) {
-    console.log([]);
+    return [];
   } else if (arr.length >= 3 && arr.length % 2 === 0) {
-    middleIndex = (newArr.length / 2) 
-    console.log(newArr.slice(middleIndex - 1, middleIndex + 1))
+    middleIndex = (newArr.length / 2);
+    newArr = newArr.slice(middleIndex - 1, middleIndex + 1);
   } else {
-    middleIndex = ((newArr.length + 1) / 2)
-    console.log(newArr.slice(middleIndex - 1, middleIndex))
+    middleIndex = ((newArr.length + 1) / 2);
+    newArr = newArr.slice(middleIndex - 1, middleIndex);
   }
+  return newArr;
 };
 
 module.exports = middle;
