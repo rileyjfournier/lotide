@@ -45,3 +45,6 @@ flatten([1, 2, [3, 4], 5, [6]]);
 flatten([23, 10, [1, 2], 4, 1, [3, 5]])
 flatten(coolArr);
 console.log(coolArr);
+
+
+module.exports = flatten;

@@ -56,3 +56,5 @@ without(words, ["lighthouse"]);
 console.log();
 
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+
+module.exports = without;

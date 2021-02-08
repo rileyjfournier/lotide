@@ -25,3 +25,6 @@ const example1 = findKey({
 }, student => student.stars === 2) // this should return "noma"
 
 assertEqual(example1, "noma");
+
+
+module.exports = findKey;

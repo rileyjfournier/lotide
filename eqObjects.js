@@ -68,12 +68,4 @@ console.log(eqObjects(ab, cd))
 // assertEqual(eqObjects(ab, abc), false);
 
 
-
-
-const someObject = {
-  key1: "blah",
-  key2: "moreblah",
-  key3: ""
-}
-
-Object.keys(someObject)  // will return an array => [ key1, key2, key3 ]
+module.exports = eqObjects;

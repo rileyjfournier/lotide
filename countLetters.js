@@ -25,3 +25,5 @@ const strExample = "hello my name is riley";
 countLetters(strExample);
 
 assertEqual(strExample, "hello my name is riley");
+
+module.exports = countLetters;
