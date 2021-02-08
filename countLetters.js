@@ -17,7 +17,7 @@ const countLetters = function(str) {
       }
     }
   }
-  console.log(newObj);
+  return newObj;
 };
 
 const strExample = "hello my name is riley";
